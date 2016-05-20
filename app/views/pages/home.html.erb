@@ -1,0 +1,45 @@
+
+
+    <body class="container">
+        <h1>Home</h1>
+            <header class="text-center jumbotron">
+            <h1>Welcome to my Ruby on Rails Homepage</h1>
+            <h3>I am learning to develop Web Apps</h3>
+          </header>
+        <div class="row">
+            <div class= "col-md-3 pull-left"><%= link_to (image_tag "Lysa's Rockstar shots.21.jpg", height: 200, width: 250, class: "img-circle"), "about"  %></div>
+            <div class= "col-md-9 pull-left">
+                <p class="text-justify">
+                    Welcome. My name is Tim, I live in Los Angeles and I'm interested in 
+                    learning Web Development. I have some experience with HTML, CSS, JavaScript, 
+                    JQuery, PHP, MySQL, and currently focusing on the Ruby programming language 
+                    and Ruby on Rails, a Web Application framework built on the Ruby language. 
+                    Rails is a full-stack, self contained solution for quickly developing 
+                    applications and deploying them to the Web. Ruby is a beautiful coding 
+                    language that reads much like English, making it a very programmer-friendly 
+                    language to use. Also Ruby and Rails both have a thriving community of 
+                    contributers and developers at all levels, from beginner to exeperienced 
+                    which makes it fertile ground for learning and helping others learn.
+                </p>
+                <p class="text-justify"> 
+                    I am currently enrolled in Udemy's Complete Ruby on Rails Developer 
+                    course, and will be undertaking several projects that will reinforce my 
+                    skills, which are at an early stage. I look forward to deploying my 
+                    projects and learning how to apply these techniques to my own projects.
+                 </p>
+            </div>
+            
+            
+           <p><%= link_to 'About', about_path %></p>
+        </div>
+
+    
+    
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+  </body>
+</html>
+
