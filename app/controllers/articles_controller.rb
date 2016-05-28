@@ -18,7 +18,7 @@ class ArticlesController < ApplicationController
            flash[:notice] = "Article was successfully saved"
            redirect_to article_path(@article)
        else
-           flash[:notice] = "Something went wrong, please try again"
+           flash[:warning] = "Something went wrong, please try again"
            render 'new'
        end
     end
@@ -30,13 +30,21 @@ class ArticlesController < ApplicationController
     def update
        @article = Article.find(params[:id])
        if @article.update(article_params )
-           flash[:notice] = "Article successfully updated"
+           flash[:success] = "Article successfully updated"
            redirect_to article_path(@article)
        else
-           flash[:notice] = "Article update failed. Please try again"
+           flash[:warning] = "Article update failed. Please try again"
            render 'edit'
        end
     end
+       
+     def destroy
+       @article = Article.find(params[:id])
+       @article.destroy
+       flash[:success] = "Article successfully deleted"
+       redirect_to articles_path
+     end
+    
     
     
     private
