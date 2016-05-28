@@ -1,14 +1,41 @@
 class ArticlesController < ApplicationController
     
+    def index
+      @articles = Article.all
+    end
+    
     def new
      @article = Article.new
     end
     
+    def show
+        @article = Article.find(params[:id])
+    end
+    
     def create
-       #render plain: params[:article].inspect
        @article = Article.new(article_params)
-       @article.save
-       redirect_to articles_show(@article)
+       if @article.save
+           flash[:notice] = "Article was successfully saved"
+           redirect_to article_path(@article)
+       else
+           flash[:notice] = "Something went wrong, please try again"
+           render 'new'
+       end
+    end
+    
+    def edit
+       @article = Article.find(params[:id]) 
+    end
+    
+    def update
+       @article = Article.find(params[:id])
+       if @article.update(article_params )
+           flash[:notice] = "Article successfully updated"
+           redirect_to article_path(@article)
+       else
+           flash[:notice] = "Article update failed. Please try again"
+           render 'edit'
+       end
     end
     
     
