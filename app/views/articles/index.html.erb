@@ -1,5 +1,6 @@
-<h1>Listing Articles</h1>
-<p><%= link_to "New Article", new_article_path %></p>
+<div class="container">
+  <h1>Listing Articles</h1>
+<h4><%= link_to "New Article", new_article_path %></h4>
 <table>
   <tr>
     <th>Title</th>
@@ -16,4 +17,5 @@
   <% end %>
 </table>
 
-<%= link_to 'Home', root_path %>
+<h4><%= link_to 'Home', root_path %></h4>
+</div>

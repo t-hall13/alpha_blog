@@ -1,8 +1,10 @@
-<h1>Showing selected Article</h1>
-<p>Title: <%=  @article.title %></p>
+<div class= "container">
+  <h1>Showing selected Article</h1>
+  <p>Title: <%=  @article.title %></p>
+  
+  <p>Description: <%= @article.description %></p>
+  
+  <p><%= link_to 'Edit', edit_article_path(@article)  %></p>
 
-<p>Description: <%= @article.description %></p>
-
-<p><%= link_to 'Edit', edit_article_path(@article)  %></p>
-
-<%= link_to 'Back to Articles listing', articles_path %>
+  <%= link_to 'Back to Articles listing', articles_path %>
+</div>
