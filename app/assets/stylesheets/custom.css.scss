@@ -12,6 +12,17 @@ $navbar-default-bg: #000000;
   font-weight: bold;
 }
 
+#logo:hover {
+  color: #F50909;
+}
+
 .center {
   text-align: center;
+}
+
+.jumbotron {
+  background-image: asset-url('macbook.jpg');
+  background-position: center;
+  color: #F50909;
+  height: 375px;
 }
