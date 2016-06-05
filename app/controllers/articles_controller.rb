@@ -1,5 +1,6 @@
 class ArticlesController < ApplicationController
   before_action :set_article, only: [:show, :edit, :update, :destroy ]
+  layout "articles"
     
     def index
       @articles = Article.all
@@ -10,16 +11,16 @@ class ArticlesController < ApplicationController
     end
     
     def show
-        
+      
     end
     
     def create
        @article = Article.new(article_params)
        if @article.save
-           flash[:notice] = "Article was successfully saved"
+           flash[:success] = "Article was successfully saved"
            redirect_to article_path(@article)
        else
-           flash[:warning] = "Something went wrong, please try again"
+           flash[:danger] = "Something went wrong, please try again"
            render 'new'
        end
     end

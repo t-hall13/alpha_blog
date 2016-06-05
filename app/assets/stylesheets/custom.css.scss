@@ -2,6 +2,11 @@ $navbar-default-bg: #000000;
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
+body {
+  background-image: asset-url("abstract-arch.jpg"); 
+  background-position: center;
+  color: #FC031A;
+}
 
 #logo {
   float:left;
@@ -50,4 +55,24 @@ footer ul {
 footer ul li {
   float: left;
   margin-left: 15px;
+}
+
+.article-content {
+  background-color: #E1DCDC;
+  opacity:.9;
+  padding: 15px;
+  border-radius: 3px;
+  color: #000;
+}
+
+.article-bg {
+  background-image: asset-url("Typewriter.jpg");
+  background-position: center;
+}
+
+.index-buttons {
+  margin: 1px;
+  border-radius: 1px;
+  padding: 1px;
+  
 }
