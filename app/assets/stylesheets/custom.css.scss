@@ -57,10 +57,16 @@ footer ul li {
   margin-left: 15px;
 }
 
+.article-title {
+  font-weight: bold;
+  font-size: 1.2em;
+  color: #fff;
+}
+
 .article-content {
-  background-color: #E1DCDC;
+  background-color: #D8DBE0;
   // background-image: asset-url("reef.jpg");
-  opacity:.9;
+  opacity:.8;
   padding: 15px;
   border-radius: 3px;
   color: #000;
@@ -68,12 +74,31 @@ footer ul li {
 
 .article-bg {
   background-image: asset-url("Typewriter.jpg");
-  background-position: center;
+  background-attachment: fixed;
+  background-position:  center;
+  background-size: cover;
 }
 
+#index-header {
+  color: #000;
+}
 .index-buttons {
   margin: 1px;
   border-radius: 1px;
   padding: 1px;
-  
+}
+
+.article-body {
+  border-top: 1px solid #eaeaea;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  color: #000;
+}
+
+.article-actions {
+  font-size: .7em;
+}
+
+.black {
+  background-color: #000;
 }
