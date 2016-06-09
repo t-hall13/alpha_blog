@@ -1,4 +1,10 @@
 class UsersController < ApplicationController
+  before_action :set_user, only: [:show, :edit, :update, :destroy ]
+  
+  def index
+    @users = User.all
+  end
+  
   def new
     @user = User.new
   end
@@ -13,8 +19,26 @@ class UsersController < ApplicationController
     end
   end
   
+  def edit
+    
+  end
+  
+  def update
+    if @user.update(user_params)
+      flash[:success] = "#{ @user.username }'s profile was successfully updated"
+      redirect_to articles_path
+    else
+      flash[:danger] = "Something went wrong, please try again"
+      render 'edit'
+    end
+  end
+  
   private
   def user_params
     params.require(:user).permit(:username, :email, :password, :password_confirmation)
+  end
+  
+  def set_user
+    @user = User.find(params[:id])
   end
 end
