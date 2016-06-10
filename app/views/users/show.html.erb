@@ -6,7 +6,13 @@
 </div>
 <% if @user.articles.any? %>
     <h4 class='center'><%= @user.username %>'s Articles </h4>
-    <%= render 'articles/article', obj: @user.articles %>
+    <div class='center'>
+      <%= will_paginate @user_articles %>
+    </div>
+      <%= render 'articles/article', obj: @user_articles %>
+    <div class='center'>
+      <%= will_paginate @user_articles %>
+    </div>
   <% else %>
     <h4 class='center'><%= "#{@user.username} has no articles. This is very sad." %></h4>
 <% end %>
