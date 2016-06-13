@@ -13,10 +13,16 @@
      </ul>
      <% end %>
      <p><%= @article.description %></p>
-     <div class='article-actions'>
-       <%= link_to 'Edit', edit_article_path(@article) %> |
-       <%= link_to 'Back to Articles listing', articles_path %> |
-       <%= link_to 'Delete', article_path(@article), method: :delete, data: {confirm: "Are you sure?"}  %>
-     </div>
+      <% if logged_in? && current_user == @article.user %>
+       <div class='article-actions'>
+         <%= link_to 'Edit', edit_article_path(@article) %> |
+         <%= link_to 'Back to Articles listing', articles_path %> |
+         <%= link_to 'Delete', article_path(@article), method: :delete, data: {confirm: "Are you sure?"}  %>
+       </div>
+      <% else %>
+        <div>
+          <%= link_to 'Back to Articles listing', articles_path %>
+        </div>
+      <% end %>   
   </div>
 </div>
