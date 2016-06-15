@@ -41,10 +41,12 @@ class UsersController < ApplicationController
   end
     
     def destroy
-      @user = User.find(params[:id])
-      @user.destroy
-      flash[:warning] = "#{@user.username} and all #{@user.username}'s articles sent to the Wall of Shame"
-      redirect_to users_path
+      unless @user == current_user
+        @user = User.find(params[:id])
+        @user.destroy 
+        flash[:warning] = "#{@user.username} and all #{@user.username}'s articles sent to the Wall of Shame"
+        redirect_to users_path
+      end
     end
   
   
