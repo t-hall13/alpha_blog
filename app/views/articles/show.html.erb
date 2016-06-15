@@ -13,7 +13,7 @@
      </ul>
      <% end %>
      <p><%= @article.description %></p>
-      <% if logged_in? && current_user == @article.user %>
+      <% if logged_in? && (current_user == @article.user || current_user.admin?) %>
        <div class='article-actions'>
          <%= link_to 'Edit', edit_article_path(@article) %> |
          <%= link_to 'Back to Articles listing', articles_path %> |
