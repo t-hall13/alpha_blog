@@ -14,7 +14,10 @@
             </small>
             </div>
         </div>
-        <% if logged_in? && (current_user == article.user || current_user.admin?)%>
+           <% if article.categories.any? %>
+               <p class='center'>Categories: <%= render article.categories %></p>
+           <% end %>
+         <% if logged_in? && (current_user == article.user || current_user.admin?)%>
           <div class='article-actions center'>
            <%= link_to 'Edit', edit_article_path(article) %> |
            <%= link_to 'Delete', article_path(article), method: :delete, data: {confirm: "Are you sure?"}  %>

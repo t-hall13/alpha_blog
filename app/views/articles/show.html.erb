@@ -1,4 +1,4 @@
-<div class= "center container article-content">
+ <div class= "center container article-content">
   <div class 'col-xs-6 col-xs-offset-3'>
     <h2><%=  @article.title %></h2>
     <% if @article.user %>
@@ -13,6 +13,9 @@
      </ul>
      <% end %>
      <p><%= @article.description %></p>
+       <% if @article.categories.any? %>
+         <p>Categories: <%= render @article.categories %></p>
+       <% end %>
       <% if logged_in? && (current_user == @article.user || current_user.admin?) %>
        <div class='article-actions'>
          <%= link_to 'Edit', edit_article_path(@article) %> |
