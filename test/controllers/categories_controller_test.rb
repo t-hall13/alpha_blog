@@ -6,6 +6,7 @@ class CategoriesControllerTest < ActionController::TestCase
     @category = Category.create(name: "music")
   end
   
+  
   test "should get categories index" do
     get :index
     assert_response :success
